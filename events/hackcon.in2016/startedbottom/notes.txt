@@ -1,0 +1,1 @@
+Patched the jmp so I could gdb, wrote some z3py.
