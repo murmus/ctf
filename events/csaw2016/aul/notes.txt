@@ -1,0 +1,5 @@
+yeah...
+
+if you type help it dumps out compiled lua, so I tried to run some lua and it worked.
+
+It just interprets any lua you give it. I dumped the source code too, for reference
