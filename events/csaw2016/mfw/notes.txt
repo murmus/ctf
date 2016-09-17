@@ -1,0 +1,9 @@
+Uh...
+
+WTF PHP?
+
+Assert will eval shit?
+
+(Look at test.php)
+
+I used simple command injection then to read flag.php
