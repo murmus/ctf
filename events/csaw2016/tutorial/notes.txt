@@ -1,0 +1,5 @@
+Stupid simple buffer overflow.
+
+Learned why the bespoke gadgets sometimes don't work: they do lea $rsi, $rsp+0x?0, where ? is 3, 5, or 7. If that isn't a null terminated list of valid pointers, execve returns EFAULT.
+
+Had to do dup2 ropchain to make it work after that.
