@@ -1,0 +1,3 @@
+match 1000 regexes.
+
+Awful python is awful.
