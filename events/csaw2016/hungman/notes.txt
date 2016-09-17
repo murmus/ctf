@@ -1,0 +1,3 @@
+Pretty simple overflow. Bash one structure from another with name
+
+Tricky bit is getting exploitation, I ended up bashing the scanf got entry, because that let me use the 0x70 bespoke gadget
