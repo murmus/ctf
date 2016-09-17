@@ -1,0 +1,4 @@
+Change the magic 
+aaddddaa=>0a0d0d0a
+
+open in wireshark. Flag is in a stream.
