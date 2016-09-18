@@ -1,0 +1,7 @@
+Used photorec to pull off deleted powerpoint.
+
+Found online copy of powerpoint, unzipped both (since powerpoints are just zips of their components), compared the list of files.
+
+The one from the drive had a gif, which turned out to be a MaxiCode barcode.
+
+Used some random android app to scan it, got a flag.
