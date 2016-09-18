@@ -1,0 +1,9 @@
+Well, this is embarassing...
+
+ "gl`gzt2mql`t2_leu4qr1gsalmhnf_hs^gs8^4^3wesy1n2}" is the flag.
+
+ I noticed that that looks a lot like flag{...}, but with every other character offset by one ascii value.
+
+ So I tried that, adding -1,0,1,0
+
+ and it got close enough to read the flag, and only took a few manual changes to get points.
