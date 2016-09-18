@@ -1,0 +1,3 @@
+I used http://robertheaton.com/2013/07/29/padding-oracle-attack/
+
+its an oracle padding attack, fairly straightfoward to just follow those instructions. Code is there for reference, since that guy did all the hard work.
