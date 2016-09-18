@@ -1,0 +1,5 @@
+For part one, I just did what it says wasn't the answer for raidoactive in plaidctf (THANKS HELLMAN)
+
+http://mslc.ctf.su/wp/plaidctf-2016-radioactive-crypto-275/
+
+After that, some munging and you get a flag.
