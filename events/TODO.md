@@ -1,7 +1,3 @@
 # TODO
 
-* routers exploit finished
-
-# DONE
-
-* ALICTF first run writeups
+* Lots of good 33c3ctf pwnables to go back and do
