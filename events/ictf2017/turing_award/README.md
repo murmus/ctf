@@ -1,0 +1,1 @@
+Probably the simplest exploit I landed for the competition, and the one we got first blood on. This is pretty simple: there's a buffer overflow in command input that will overflow the question_id. It's as simple as triggering that overflow and having the server spit back a flag to you.
