@@ -45,7 +45,6 @@ if __name__ == "__main__":
 	patch_symbol("mcore_bin", "mcore_bin", "puts")
 	patch_symbol("mcore_bin", "mcore_bin", "putchar")
 	patch_symbol("mcore_bin", "mcore_bin", "fputs")
-	patch_symbol("mcore_bin", "mcore_bin", "fputs")
 	patch_symbol("mcore_bin", "mcore_bin", "setbuf")
 
 	callocs = get_callocs(args.filename)
