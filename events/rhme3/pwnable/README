@@ -1,0 +1,11 @@
+A standard-ish heap overflow challenge. 
+
+Create some players
+Select the first player, so we keep a reference
+Remove two players
+Create a new player so that the name of the new player overwrites the struct for the selected player
+Use this to overwrite the pointer for Free in the GOT to system
+
+free last player, with name "/bin/sh"
+
+Flag: RHME3{h3ap_0f_tr0uble?}
