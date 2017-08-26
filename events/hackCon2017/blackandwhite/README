@@ -1,0 +1,4 @@
+Grab pixel values, write out.
+Turns out it's an elf
+
+Elf builds a string, but does print it, so a breakpoint and gdb gets a flag.
