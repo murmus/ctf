@@ -1,0 +1,3 @@
+See solve.py
+
+Basically, we get the pixels out, get the last chunk out, then decode it. Only trick is using a lookup table for the md5.
