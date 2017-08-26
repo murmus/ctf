@@ -1,0 +1,1 @@
+Each PNG has a base64 which is another png in it. Composite them all together, and you get a flag
